@@ -1,0 +1,56 @@
+
+### Login para la app
+POST https://mvp-api-jc.herokuapp.com/api/users/login
+Content-Type: application/json
+
+{
+    "email": "daniel@gmail.com" ,
+     "password": "123qweasdzxc"
+}
+
+
+###
+Post https://mvp-api-jc.herokuapp.com/api/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJtdnBfYXBpIiwiZXhwIjoxNjI3OTY4MjM5LCJpYXQiOjE2Mjc3MDkwMzksImlzcyI6Im12cF9hcGkiLCJqdGkiOiI1YzhiNjYwOS1kNTcwLTRiMTctOGJkNS1mNGNlNjNlZjg5ZjIiLCJuYmYiOjE2Mjc3MDkwMzgsInN1YiI6IjJhM2I2NDBiLTlkMTItNDJlOS04N2JjLTNmZTI0YjdhNGU3OSIsInR5cCI6ImFjY2VzcyJ9.bQkUrynwI9Yl4Q8axx8D2TRW6X9qyVPh8ADwvP2HET5S4unPg82URmy-SvZOtlSg4qzHOGsxi8yCr8TgxQL-8w
+
+{
+  "product": {
+   "name" : "g",
+    "factors" : [{"name": "1", "value": 1, "weighing": 1}]
+  }
+
+}
+
+
+###
+https://mvp-api-jc.herokuapp.com/api/admin/tangible_fixed_assets
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJtdnBfYXBpIiwiZXhwIjoxNjI3OTY4MDk1LCJpYXQiOjE2Mjc3MDg4OTUsImlzcyI6Im12cF9hcGkiLCJqdGkiOiI3NmFjZWQxYS01YjU5LTQwYWUtOWY2Ny05YTI0ODhkYTU1MzQiLCJuYmYiOjE2Mjc3MDg4OTQsInN1YiI6IjJhM2I2NDBiLTlkMTItNDJlOS04N2JjLTNmZTI0YjdhNGU3OSIsInR5cCI6ImFjY2VzcyJ9.7NWq-FB6EFPjPhVNQ9FpW_ox4sop_7xzQ7-GRyJbUYHU9qsWgi2ua1uU5oCn8ez0oUK5CUrSDN7QATYeR2M_yQ
+
+
+###
+POST https://mvp-api-jc.herokuapp.com/api/admin/tangible_fixed_assets
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJtdnBfYXBpIiwiZXhwIjoxNjI2MjgxNzU2LCJpYXQiOjE2MjYwMjI1NTYsImlzcyI6Im12cF9hcGkiLCJqdGkiOiI0ZGVjNTJiMC01ZWJlLTRiM2MtOWI0NC0wOTQwNWM1YTA5YjYiLCJuYmYiOjE2MjYwMjI1NTUsInN1YiI6IjJhM2I2NDBiLTlkMTItNDJlOS04N2JjLTNmZTI0YjdhNGU3OSIsInR5cCI6ImFjY2VzcyJ9.swkx8xcn2Qmp8620ZWYWs5X3nAec2HFtk151fa-Fc4HRkIbg03ggISGUne9bW_f_JOzqu4ccIDLxVQMU3JDeHg
+
+{
+     "tangible_fixed_asset": {
+                  "classification" : "1",
+                  "dedicated_percentage" :"1",
+                  "depreciation_rate" : "1",
+                  "description": "1",
+                  "inventory_number" : "1",
+                  "purchase_price": {
+                     "amount" : "1",
+                     "currency" : "CUP"
+                  },
+                  "quantity" : "1"
+            }
+}
+
+
+###
+https://mvp-api-jc.herokuapp.com/api/infrastructure/utils_tools
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJtdnBfYXBpIiwiZXhwIjoxNjI2ODM3NjQ2LCJpYXQiOjE2MjY1Nzg0NDYsImlzcyI6Im12cF9hcGkiLCJqdGkiOiI4YWI4ZTk3OC04MmQ3LTRiZTYtOTBkMC0zMTRlY2JmOWQ2NDYiLCJuYmYiOjE2MjY1Nzg0NDUsInN1YiI6IjJhM2I2NDBiLTlkMTItNDJlOS04N2JjLTNmZTI0YjdhNGU3OSIsInR5cCI6ImFjY2VzcyJ9.jLZawZwbrxmpL3wdIjV_9qayyxH7V4ciZaVQiIktTkndNEvSBjtWSEScPdHmW5q52IHX_Ft6_fdL-31NlR4d6g

@@ -1,0 +1,110 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <form role="form" [formGroup]="fromP" (ngSubmit)="onSubmit()">
+        <div class="card">
+          <div class="card-header text-center">
+            <strong>Agregar </strong>
+            <small>Producot</small>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="company">Nombr Proceso</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="name"
+                id="company"
+                placeholder="Nombre Proceso"
+              />
+            </div>
+
+            <div class="box" *ngIf="!inLenghtList()">
+              <ul>
+                <li *ngFor="let i of faclist; let it = index">
+                  Factor({{ it + 1 }})-- Nombre: {{ i.name }},Valor:{{
+                    i.value
+                  }},Ponderacion: {{ i.weighing }}
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="card-header text-center">
+                <strong>Agregar </strong>
+                <small>Factores al Producto</small>
+              </div>
+              <div class="card-body">
+                <form [formGroup]="fromF" (ngSubmit)="submit()">
+                  <div class="form-group">
+                    <label for="company">Nombre Factor</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      formControlName="namef"
+                      placeholder="Nombre Factor"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="company">Valor</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      formControlName="valor"
+                      placeholder="Valor"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="company">Ponderacion</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      formControlName="pon"
+                      placeholder="Ponderacion"
+                    />
+                  </div>
+
+                  <button
+                    [disabled]="!fromP.valid"
+                    type="submit"
+                    class="btn btn-primary my-4 mr-2 fadeIn fourth"
+                  >
+                    Agragar
+                  </button>
+                  <button
+                    (click)="activa = !activa"
+                    type="submit"
+                    class="btn btn-primary my-4 mr-2 fadeIn fourth"
+                  >
+                    Terminar
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6 col-lg-6"></div>
+              <div class="col-sm-6 col-lg-6">
+                <button
+                  type="submit"
+                  class="btn btn-primary my-4 mr-2 fadeIn fourth"
+                >
+                  Crear
+                </button>
+                <button
+                  [routerLink]="['/']"
+                  type="button"
+                  class="btn btn-primary my-4 fadeIn fourth"
+                >
+                  Cancelar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>

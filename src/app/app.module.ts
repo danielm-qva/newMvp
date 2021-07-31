@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import {HttpClientModule} from '@angular/common/http';
 
 import { IconModule, IconSetModule, IconSetService } from '@coreui/icons-angular';
 
@@ -43,6 +44,9 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 
+
+import {ReactiveFormsModule , FormsModule} from '@angular/forms';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -59,6 +63,9 @@ import { ChartsModule } from 'ng2-charts';
     ChartsModule,
     IconModule,
     IconSetModule.forRoot(),
+    HttpClientModule,
+    ReactiveFormsModule , 
+    FormsModule
   ],
   declarations: [
     AppComponent,
