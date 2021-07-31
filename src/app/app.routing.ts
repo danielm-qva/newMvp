@@ -3,6 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 
 // Import Containers
 import { DefaultLayoutComponent } from "./containers";
+import { AuthCantActiveService } from "./Services/auth-cant-active.service";
 import { FormsComponent } from "./views/base/forms.component";
 import { TablesComponent } from "./views/base/tables.component";
 import { DashboardComponent } from "./views/dashboard/dashboard.component";
@@ -25,14 +26,24 @@ export const routes: Routes = [
       {
         path: "dashboard",
         component: DashboardComponent,
+        canActivate: [AuthCantActiveService],
       },
-      { path: "from", component: FormsComponent },
+      { path: "from", component: TablesComponent },
       {
         path: "producto",
         loadChildren: () =>
           import("./Modules/m-client/m-client.module").then(
             (m) => m.MClientModule
           ),
+        canActivate: [AuthCantActiveService],
+      },
+      {
+        path: "inovacion",
+        loadChildren: () =>
+          import("./Modules/m-conocimiento/m-conocimiento.module").then(
+            (m) => m.MConocimientoModule
+          ),
+        canActivate: [AuthCantActiveService],
       },
     ],
   },

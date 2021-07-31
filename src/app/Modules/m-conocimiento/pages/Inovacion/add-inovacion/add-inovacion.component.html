@@ -1,0 +1,116 @@
+<ngx-loading-x [show]="load"></ngx-loading-x>
+
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <form role="form" [formGroup]="Finovacion" (ngSubmit)="onSubmit()">
+        <div class="card">
+          <div class="card-header text-center">
+            <strong>Agregar </strong>
+            <small>Inovacion</small>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="company">Nombre </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="name"
+                id="company"
+                placeholder="Nombre Proceso"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Objetivo</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="objective"
+                id="company"
+                placeholder="Objetivo"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Resultado</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="expected_result"
+                id="company"
+                placeholder="Resultado Esperado"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Presupuesto</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="budget"
+                id="company"
+                placeholder="Presupuesto Total"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Plazo</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="term"
+                id="company"
+                placeholder="Plazo"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Efecto Anual Esperado</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="expected_annual_effect"
+                id="company"
+                placeholder="Efecto Anual Esperado"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Efecto Anual Esperado</label>
+
+              <textarea
+                class="form-control"
+                formControlName="observation"
+                placeholder="Observacion"
+              >
+              </textarea>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6 col-xl-6"></div>
+              <div class="col-sm-6 col-xl-6">
+                <button
+                  [disabled]="!Finovacion.valid"
+                  type="submit"
+                  class="btn btn-primary my-4 mr-2 fadeIn fourth"
+                >
+                  Crear
+                </button>
+                <button
+                  [routerLink]="['/app', 'inovacion', 'listInovacion']"
+                  type="button"
+                  class="btn btn-primary my-4 fadeIn fourth"
+                >
+                  Cancelar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>

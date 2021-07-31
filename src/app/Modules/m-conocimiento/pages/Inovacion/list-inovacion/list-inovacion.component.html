@@ -1,0 +1,60 @@
+<ngx-loading-x [show]="load"></ngx-loading-x>
+<div class="animated fadeIn">
+  <button
+    [routerLink]="['/app', 'inovacion', 'addInovacion']"
+    class="btn btn-success btn-sm mr-1"
+    style="margin-bottom: 4px"
+  >
+    <span> <i class="fa fa-plus"></i> Agregar</span>
+  </button>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify">Producto</i>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-striped table-responsive-sm">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Objetivo</th>
+                <th scope="col">Resultado Esperado</th>
+                <th scope="col">Presupuesto</th>
+                <th scope="col">Plazo(año)</th>
+                <th scope="col">Efecto Anual Espeado</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let i of list">
+                <th scope="row">{{ i.name }}</th>
+                <td>{{ i.objective }}</td>
+                <td>{{ i.expected_result }}</td>
+                <td>{{ i.budget.amount }}</td>
+                <td>{{ i.term }}</td>
+                <td>{{ i.expected_annual_effect.amount }}</td>
+                <td>
+                  <button
+                    (click)="deleteinovacion(i.id)"
+                    class="btn btn-danger btn-md mr-1 ml-1"
+                  >
+                    <i class="fa fa-trash"></i>
+                  </button>
+
+                  <button
+                    (click)="UpdateInvacion(i.id)"
+                    class="btn btn-info btn-xs mr-1 ml-1"
+                    [routerLink]="['/mconocimiento/updateinovacion', i.id]"
+                  >
+                    <i class="fa fa-history"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

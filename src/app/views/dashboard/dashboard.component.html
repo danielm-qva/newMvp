@@ -1,603 +1,274 @@
 <div class="animated fadeIn">
-  <div class="row">
-    <div class="col-sm-6 col-lg-3">
-      <div class="card text-white bg-info">
-        <div class="card-body pb-0">
-          <div>Modulo Cliente</div>
-        </div>
-        <div class="chart-wrapper mt-3 mx-3" style="height: 70px">
-          <button
-            (click)="hola()"
-            [routerLink]="['/app ', 'producto', 'listproduct']"
-            routerLinkActive="router-link-active"
-            type="button"
-            class="btn btn-transparent p-0 mt-4 float-right"
-          >
-            <i class="icon-location-pin">Visitar</i>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!--/.col-->
-    <div class="col-sm-6 col-lg-3">
-      <div class="card text-white bg-primary">
-        <div class="card-body pb-0">
-          <div class="btn-group float-right" dropdown>
-            <button
-              type="button"
-              class="btn btn-transparent dropdown-toggle p-0"
-              dropdownToggle
-            >
-              <i class="icon-settings"></i>
-            </button>
-          </div>
-          <div class="text-value">9.823</div>
-          <div>Members online</div>
-        </div>
-        <div class="chart-wrapper mt-3 mx-3" style="height: 70px"></div>
-      </div>
-    </div>
-    <!--/.col-->
-    <div class="col-sm-6 col-lg-3">
-      <div class="card text-white bg-warning">
-        <div class="card-body pb-0">
-          <div class="btn-group float-right" dropdown>
-            <button
-              type="button"
-              class="btn btn-transparent dropdown-toggle p-0"
-              dropdownToggle
-            >
-              <i class="icon-settings"></i>
-            </button>
-            <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </div>
-          <div class="text-value">9.823</div>
-          <div>Members online</div>
-        </div>
-        <div class="chart-wrapper mt-3" style="height: 70px"></div>
-      </div>
-    </div>
-    <!--/.col-->
-    <div class="col-sm-6 col-lg-3">
-      <div class="card text-white bg-danger">
-        <div class="card-body pb-0">
-          <div class="btn-group float-right" dropdown>
-            <button
-              type="button"
-              class="btn btn-transparent dropdown-toggle p-0"
-              dropdownToggle
-            >
-              <i class="icon-settings"></i>
-            </button>
-            <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </div>
-          <div class="text-value">9.823</div>
-          <div>Members online</div>
-        </div>
-        <div class="chart-wrapper mt-3 mx-3" style="height: 70px">
-          <canvas
-            baseChart
-            class="chart"
-            [datasets]="barChart1Data"
-            [labels]="barChart1Labels"
-            [options]="barChart1Options"
-            [colors]="barChart1Colours"
-            [legend]="barChart1Legend"
-            [chartType]="barChart1Type"
-          ></canvas>
-        </div>
-      </div>
-    </div>
-    <!--/.col-->
-  </div>
   <!--/.row-->
   <div class="card">
     <div class="card-body">
       <div class="row">
         <div class="col-sm-5">
-          <h4 class="card-title mb-0">Traffic</h4>
-          <div class="small text-muted">November 2017</div>
+          <h4 class="card-title mb-0">Cuadro de Mando</h4>
+          <div class="small text-muted">fecha Time</div>
         </div>
         <!--/.col-->
         <div class="col-sm-7 d-none d-md-block">
           <button type="button" class="btn btn-primary float-right">
             <i class="icon-cloud-download"></i>
           </button>
-          <div
-            class="btn-group btn-group-toggle float-right mr-3"
-            data-toggle="buttons"
-          >
-            <label
-              class="btn btn-outline-secondary"
-              [(ngModel)]="radioModel"
-              btnRadio="Day"
-              id="option1"
-              >Day</label
-            >
-            <label
-              class="btn btn-outline-secondary"
-              [(ngModel)]="radioModel"
-              btnRadio="Month"
-              id="option2"
-              >Month</label
-            >
-            <label
-              class="btn btn-outline-secondary"
-              [(ngModel)]="radioModel"
-              btnRadio="Year"
-              id="option3"
-              >Year</label
-            >
-          </div>
         </div>
         <!--/.col-->
       </div>
       <!--/.row-->
-      <div class="chart-wrapper" style="height: 300px; margin-top: 40px">
-        <canvas
-          baseChart
-          class="chart"
-          [datasets]="mainChartData"
-          [labels]="mainChartLabels"
-          [options]="mainChartOptions"
-          [colors]="mainChartColours"
-          [legend]="mainChartLegend"
-          [chartType]="mainChartType"
-        ></canvas>
+
+      <div class="row">
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-info">
+            <div class="card-body pb-0">
+              <div>Submodulo Cliente</div>
+            </div>
+            <div class="chart-wrapper mt-3 mx-3" style="height: 70px">
+              <button
+                name="cliente"
+                (click)="hola($event)"
+                routerLinkActive="router-link-active"
+                type="button"
+                class="btn btn-transparent p-0 mt-4 float-right"
+              >
+                <i class="icon-location-pin"></i>
+                Visitar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-info">
+            <div class="card-body pb-0">
+              <div>Submodulo Conocimiento</div>
+            </div>
+            <div class="chart-wrapper mt-3 mx-3" style="height: 70px">
+              <button
+                name="conocimiento"
+                (click)="hola($event)"
+                type="button"
+                class="btn btn-transparent p-0 mt-4 float-right"
+              >
+                <i class="icon-location-pin"></i>
+                Visitar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-pink">
+            <div class="card-body pb-0">
+              <div>Submodulo Economico-Financiero</div>
+            </div>
+            <div class="chart-wrapper mt-3 mx-3" style="height: 70px">
+              <button
+                name="economicoF"
+                (click)="hola($event)"
+                type="button"
+                class="btn btn-transparent p-0 mt-4 float-right"
+              >
+                <i class="icon-location-pin"></i>
+                Visitar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-dark">
+            <div class="card-body pb-0">
+              <div>Submodulo Ambiental</div>
+            </div>
+            <div class="chart-wrapper mt-3 mx-3" style="height: 70px">
+              <button
+                name=""
+                (click)="hola($event)"
+                type="button"
+                class="btn btn-transparent p-0 mt-4 float-right"
+              >
+                <i class="icon-location-pin"></i>
+                Visitar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-facebook">
+            <div class="card-body pb-0">
+              <div>Submodulo Energetico</div>
+            </div>
+            <div class="chart-wrapper mt-3 mx-3" style="height: 70px">
+              <button
+                name=""
+                (click)="hola($event)"
+                type="button"
+                class="btn btn-transparent p-0 mt-4 float-right"
+              >
+                <i class="icon-location-pin"></i>
+                Visitar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-google-plus">
+            <div class="card-body pb-0">
+              <div>Submodulo Logistica</div>
+            </div>
+            <div class="chart-wrapper mt-3 mx-3" style="height: 70px">
+              <button
+                name=""
+                (click)="hola($event)"
+                type="button"
+                class="btn btn-transparent p-0 mt-4 float-right"
+              >
+                <i class="icon-location-pin"></i>
+                Visitar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-css3">
+            <div class="card-body pb-0">
+              <div>Submodulo Materiales Insumo</div>
+            </div>
+            <div class="chart-wrapper mt-3 mx-3" style="height: 70px">
+              <button
+                name=""
+                (click)="hola($event)"
+                type="button"
+                class="btn btn-transparent p-0 mt-4 float-right"
+              >
+                <i class="icon-location-pin"></i>
+                Visitar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-dribbble">
+            <div class="card-body pb-0">
+              <div>Submodulo Produccion</div>
+            </div>
+            <div class="chart-wrapper mt-3 mx-3" style="height: 70px">
+              <button
+                name=""
+                (click)="hola($event)"
+                type="button"
+                class="btn btn-transparent p-0 mt-4 float-right"
+              >
+                <i class="icon-location-pin"></i>
+                Visitar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-flickr">
+            <div class="card-body pb-0">
+              <div>Submodulo Producto</div>
+            </div>
+            <div class="chart-wrapper mt-3 mx-3" style="height: 70px">
+              <button
+                name=""
+                (click)="hola($event)"
+                type="button"
+                class="btn btn-transparent p-0 mt-4 float-right"
+              >
+                <i class="icon-location-pin"></i>
+                Visitar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-cyan">
+            <div class="card-body pb-0">
+              <div>Submodulo Personal</div>
+            </div>
+            <div class="chart-wrapper mt-3 mx-3" style="height: 70px">
+              <button
+                name=""
+                (click)="hola($event)"
+                type="button"
+                class="btn btn-transparent p-0 mt-4 float-right"
+              >
+                <i class="icon-location-pin"></i>
+                Visitar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-foursquare">
+            <div class="card-body pb-0">
+              <div>Submodulo Organisativo</div>
+            </div>
+            <div class="chart-wrapper mt-3 mx-3" style="height: 70px">
+              <button
+                name=""
+                (click)="hola($event)"
+                type="button"
+                class="btn btn-transparent p-0 mt-4 float-right"
+              >
+                <i class="icon-location-pin"></i>
+                Visitar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-indigo">
+            <div class="card-body pb-0">
+              <div>Submodulo Tecnologico</div>
+            </div>
+            <div class="chart-wrapper mt-3 mx-3" style="height: 70px">
+              <button
+                name=""
+                (click)="hola($event)"
+                type="button"
+                class="btn btn-transparent p-0 mt-4 float-right"
+              >
+                <i class="icon-location-pin"></i>
+                Visitar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-instagram">
+            <div class="card-body pb-0">
+              <div>Submodulo Infraestructura</div>
+            </div>
+            <div class="chart-wrapper mt-3 mx-3" style="height: 70px">
+              <button
+                name=""
+                (click)="hola($event)"
+                type="button"
+                class="btn btn-transparent p-0 mt-4 float-right"
+              >
+                <i class="icon-location-pin"></i>
+                Visitar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!--/.col-->
       </div>
     </div>
   </div>
   <!--/.card-->
-
-  <!--/.row-->
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">Traffic &amp; Sales</div>
-        <div class="card-body">
-          <div class="row"></div>
-          <!--/.row-->
-          <br />
-          <!-- <table
-
-            class="table table-responsive-sm table-hover table-outline mb-0"
-          >
-            <thead class="thead-light">
-              <tr>
-                <th class="text-center"><i class="icon-people"></i></th>
-                <th>User</th>
-                <th class="text-center">Country</th>
-                <th>Usage</th>
-                <th class="text-center">Payment Method</th>
-                <th>Activity</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="text-center">
-                  <div class="avatar">
-                    <img
-                      src="assets/img/avatars/1.jpg"
-                      class="img-avatar"
-                      alt="admin@bootstrapmaster.com"
-                    />
-                    <span class="avatar-status badge-success"></span>
-                  </div>
-                </td>
-                <td>
-                  <div>Yiorgos Avraamu</div>
-                  <div class="small text-muted">
-                    <span>New</span> | Registered: Jan 1, 2015
-                  </div>
-                </td>
-                <td class="text-center">
-                  <i
-                    class="flag-icon flag-icon-us h4 mb-0"
-                    title="us"
-                    id="us"
-                  ></i>
-                </td>
-                <td>
-                  <div class="clearfix">
-                    <div class="float-left">
-                      <strong>50%</strong>
-                    </div>
-                    <div class="float-right">
-                      <small class="text-muted"
-                        >Jun 11, 2015 - Jul 10, 2015</small
-                      >
-                    </div>
-                  </div>
-                  <div class="progress progress-xs">
-                    <div
-                      class="progress-bar bg-success"
-                      role="progressbar"
-                      style="width: 50%"
-                      aria-valuenow="50"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    ></div>
-                  </div>
-                </td>
-                <td class="text-center">
-                  <i class="fa fa-cc-mastercard" style="font-size: 24px"></i>
-                </td>
-                <td>
-                  <div class="small text-muted">Last login</div>
-                  <strong>10 sec ago</strong>
-                </td>
-              </tr>
-              <tr>
-                <td class="text-center">
-                  <div class="avatar">
-                    <img
-                      src="assets/img/avatars/2.jpg"
-                      class="img-avatar"
-                      alt="admin@bootstrapmaster.com"
-                    />
-                    <span class="avatar-status badge-danger"></span>
-                  </div>
-                </td>
-                <td>
-                  <div>Avram Tarasios</div>
-                  <div class="small text-muted">
-                    <span>Recurring</span> | Registered: Jan 1, 2015
-                  </div>
-                </td>
-                <td class="text-center">
-                  <i
-                    class="flag-icon flag-icon-br h4 mb-0"
-                    title="br"
-                    id="br"
-                  ></i>
-                </td>
-                <td>
-                  <div class="clearfix">
-                    <div class="float-left">
-                      <strong>10%</strong>
-                    </div>
-                    <div class="float-right">
-                      <small class="text-muted"
-                        >Jun 11, 2015 - Jul 10, 2015</small
-                      >
-                    </div>
-                  </div>
-                  <div class="progress progress-xs">
-                    <div
-                      class="progress-bar bg-info"
-                      role="progressbar"
-                      style="width: 10%"
-                      aria-valuenow="10"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    ></div>
-                  </div>
-                </td>
-                <td class="text-center">
-                  <i class="fa fa-cc-visa" style="font-size: 24px"></i>
-                </td>
-                <td>
-                  <div class="small text-muted">Last login</div>
-                  <strong>5 minutes ago</strong>
-                </td>
-              </tr>
-              <tr>
-                <td class="text-center">
-                  <div class="avatar">
-                    <img
-                      src="assets/img/avatars/3.jpg"
-                      class="img-avatar"
-                      alt="admin@bootstrapmaster.com"
-                    />
-                    <span class="avatar-status badge-warning"></span>
-                  </div>
-                </td>
-                <td>
-                  <div>Quintin Ed</div>
-                  <div class="small text-muted">
-                    <span>New</span> | Registered: Jan 1, 2015
-                  </div>
-                </td>
-                <td class="text-center">
-                  <i
-                    class="flag-icon flag-icon-in h4 mb-0"
-                    title="in"
-                    id="in"
-                  ></i>
-                </td>
-                <td>
-                  <div class="clearfix">
-                    <div class="float-left">
-                      <strong>74%</strong>
-                    </div>
-                    <div class="float-right">
-                      <small class="text-muted"
-                        >Jun 11, 2015 - Jul 10, 2015</small
-                      >
-                    </div>
-                  </div>
-                  <div class="progress progress-xs">
-                    <div
-                      class="progress-bar bg-warning"
-                      role="progressbar"
-                      style="width: 74%"
-                      aria-valuenow="74"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    ></div>
-                  </div>
-                </td>
-                <td class="text-center">
-                  <i class="fa fa-cc-stripe" style="font-size: 24px"></i>
-                </td>
-                <td>
-                  <div class="small text-muted">Last login</div>
-                  <strong>1 hour ago</strong>
-                </td>
-              </tr>
-              <tr>
-                <td class="text-center">
-                  <div class="avatar">
-                    <img
-                      src="assets/img/avatars/4.jpg"
-                      class="img-avatar"
-                      alt="admin@bootstrapmaster.com"
-                    />
-                    <span class="avatar-status badge-secondary"></span>
-                  </div>
-                </td>
-                <td>
-                  <div>Enéas Kwadwo</div>
-                  <div class="small text-muted">
-                    <span>New</span> | Registered: Jan 1, 2015
-                  </div>
-                </td>
-                <td class="text-center">
-                  <i
-                    class="flag-icon flag-icon-fr h4 mb-0"
-                    title="fr"
-                    id="fr"
-                  ></i>
-                </td>
-                <td>
-                  <div class="clearfix">
-                    <div class="float-left">
-                      <strong>98%</strong>
-                    </div>
-                    <div class="float-right">
-                      <small class="text-muted"
-                        >Jun 11, 2015 - Jul 10, 2015</small
-                      >
-                    </div>
-                  </div>
-                  <div class="progress progress-xs">
-                    <div
-                      class="progress-bar bg-danger"
-                      role="progressbar"
-                      style="width: 98%"
-                      aria-valuenow="98"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    ></div>
-                  </div>
-                </td>
-                <td class="text-center">
-                  <i class="fa fa-paypal" style="font-size: 24px"></i>
-                </td>
-                <td>
-                  <div class="small text-muted">Last login</div>
-                  <strong>Last month</strong>
-                </td>
-              </tr>
-              <tr>
-                <td class="text-center">
-                  <div class="avatar">
-                    <img
-                      src="assets/img/avatars/5.jpg"
-                      class="img-avatar"
-                      alt="admin@bootstrapmaster.com"
-                    />
-                    <span class="avatar-status badge-success"></span>
-                  </div>
-                </td>
-                <td>
-                  <div>Agapetus Tadeáš</div>
-                  <div class="small text-muted">
-                    <span>New</span> | Registered: Jan 1, 2015
-                  </div>
-                </td>
-                <td class="text-center">
-                  <i
-                    class="flag-icon flag-icon-es h4 mb-0"
-                    title="es"
-                    id="es"
-                  ></i>
-                </td>
-                <td>
-                  <div class="clearfix">
-                    <div class="float-left">
-                      <strong>22%</strong>
-                    </div>
-                    <div class="float-right">
-                      <small class="text-muted"
-                        >Jun 11, 2015 - Jul 10, 2015</small
-                      >
-                    </div>
-                  </div>
-                  <div class="progress progress-xs">
-                    <div
-                      class="progress-bar bg-info"
-                      role="progressbar"
-                      style="width: 22%"
-                      aria-valuenow="22"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    ></div>
-                  </div>
-                </td>
-                <td class="text-center">
-                  <i class="fa fa-google-wallet" style="font-size: 24px"></i>
-                </td>
-                <td>
-                  <div class="small text-muted">Last login</div>
-                  <strong>Last week</strong>
-                </td>
-              </tr>
-              <tr>
-                <td class="text-center">
-                  <div class="avatar">
-                    <img
-                      src="assets/img/avatars/6.jpg"
-                      class="img-avatar"
-                      alt="admin@bootstrapmaster.com"
-                    />
-                    <span class="avatar-status badge-danger"></span>
-                  </div>
-                </td>
-                <td>
-                  <div>Friderik Dávid</div>
-                  <div class="small text-muted">
-                    <span>New</span> | Registered: Jan 1, 2015
-                  </div>
-                </td>
-                <td class="text-center">
-                  <i
-                    class="flag-icon flag-icon-pl h4 mb-0"
-                    title="pl"
-                    id="pl"
-                  ></i>
-                </td>
-                <td>
-                  <div class="clearfix">
-                    <div class="float-left">
-                      <strong>43%</strong>
-                    </div>
-                    <div class="float-right">
-                      <small class="text-muted"
-                        >Jun 11, 2015 - Jul 10, 2015</small
-                      >
-                    </div>
-                  </div>
-                  <div class="progress progress-xs">
-                    <div
-                      class="progress-bar bg-success"
-                      role="progressbar"
-                      style="width: 43%"
-                      aria-valuenow="43"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    ></div>
-                  </div>
-                </td>
-                <td class="text-center">
-                  <i class="fa fa-cc-amex" style="font-size: 24px"></i>
-                </td>
-                <td>
-                  <div class="small text-muted">Last login</div>
-                  <strong>Yesterday</strong>
-                </td>
-              </tr>
-            </tbody>
-          </table> -->
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="card">
-                <div class="card-header">
-                  <i class="fa fa-align-justify"></i> Combined All Table
-                </div>
-                <div class="card-body">
-                  <table class="table table-bordered table-striped table-sm">
-                    <thead>
-                      <tr>
-                        <th>Username</th>
-                        <th>Date registered</th>
-                        <th>Role</th>
-                        <th>Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Vishnu Serghei</td>
-                        <td>2012/01/01</td>
-                        <td>Member</td>
-                        <td>
-                          <span class="badge badge-success">Active</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Zbyněk Phoibos</td>
-                        <td>2012/02/01</td>
-                        <td>Staff</td>
-                        <td>
-                          <span class="badge badge-danger">Banned</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Einar Randall</td>
-                        <td>2012/02/01</td>
-                        <td>Admin</td>
-                        <td>
-                          <span class="badge badge-secondary">Inactive</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Félix Troels</td>
-                        <td>2012/03/01</td>
-                        <td>Member</td>
-                        <td>
-                          <span class="badge badge-warning">Pending</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Aulus Agmundr</td>
-                        <td>2012/01/21</td>
-                        <td>Staff</td>
-                        <td>
-                          <span class="badge badge-success">Active</span>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <nav>
-                    <ul class="pagination">
-                      <li class="page-item">
-                        <a class="page-link" href="#">Prev</a>
-                      </li>
-                      <li class="page-item active">
-                        <a class="page-link" href="#">1</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link" href="#">2</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link" href="#">3</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link" href="#">4</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-            </div>
-            <!--/.col-->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--/.col-->
-  </div>
-  <!--/.row-->
 </div>
