@@ -1,0 +1,61 @@
+<ngx-loading-x [show]="load"></ngx-loading-x>
+
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <form role="form" [formGroup]="fProceso" (ngSubmit)="onSubmit()">
+        <div class="card">
+          <div class="card-header text-center">
+            <strong>Agregar </strong>
+            <small>Proceso</small>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="company">Nombre </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="name"
+                id="company"
+                placeholder="Nombre Proceso"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Descripcion</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="descriptions"
+                id="company"
+                placeholder="Descripcion"
+              />
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6 col-xl-6"></div>
+              <div class="col-sm-6 col-xl-6">
+                <button
+                  [disabled]="!fProceso.valid"
+                  type="submit"
+                  class="btn btn-primary my-4 mr-2 fadeIn fourth"
+                >
+                  Crear
+                </button>
+                <button
+                  [routerLink]="['/app', 'porcess', 'listproceso']"
+                  type="button"
+                  class="btn btn-primary my-4 fadeIn fourth"
+                >
+                  Cancelar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>

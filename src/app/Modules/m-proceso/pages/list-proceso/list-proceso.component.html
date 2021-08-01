@@ -1,0 +1,54 @@
+<ngx-loading-x [show]="load"></ngx-loading-x>
+<div class="animated fadeIn">
+  <button
+    [routerLink]="['/app', 'porcess', 'addproceso']"
+    class="btn btn-success btn-sm mr-1"
+    style="margin-bottom: 4px"
+  >
+    <span> <i class="fa fa-plus"></i> Agregar</span>
+  </button>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify">Proveedor</i>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-striped table-responsive-sm">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of list; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.description }}</td>
+
+                <td>
+                  <button
+                    (click)="delete_id(item.id)"
+                    class="btn btn-danger mr-1 ml-1"
+                  >
+                    <i class="fa fa-trash"></i>
+                  </button>
+                  <button
+                    (click)="Obtener_Provedor(item.id, item.name, longContent)"
+                    class="btn btn-info mr-1 ml-1"
+                  >
+                    <i class="fa fa-briefcase"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
