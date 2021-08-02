@@ -34,6 +34,12 @@ export class DashboardComponent implements OnInit {
       return 0;
     } else if (name == "conocimiento") {
       this.router.navigateByUrl("/app/inovacion/listInovacion");
+    } else if (name == "Proveedor") {
+      this.router.navigateByUrl("/app/proveedor/listproveedor");
+    } else if (name == "Proceso") {
+      this.router.navigateByUrl("/app/porcess/listproceso");
+    } else if (name == "ambiental") {
+      this.router.navigateByUrl("/app/ambiental/listgeneral");
     } else this.router.navigateByUrl("/404");
   }
 }

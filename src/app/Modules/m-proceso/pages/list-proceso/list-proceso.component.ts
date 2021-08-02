@@ -1,7 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
 import { MProcesoService } from "../../../../Services/m-proceso.service";
+
+import { BsModalService } from "ngx-bootstrap/modal";
 
 @Component({
   selector: "app-list-proceso",
@@ -18,7 +20,8 @@ export class ListProcesoComponent implements OnInit {
   constructor(
     private service: MProcesoService,
     private _route: Router,
-    private toast: ToastrService // private modalService: NgbModal
+    private toast: ToastrService,
+    public Modal: BsModalService
   ) {}
 
   ngOnInit() {
@@ -69,5 +72,39 @@ export class ListProcesoComponent implements OnInit {
         this._route.navigate(["/app/dashboard"]);
       }
     );
+  }
+
+  async Obtener_Provedor(id: string, name: string, longContent) {
+    this.load = true;
+    console.log(name);
+
+    await this.service.getProvedor_Process(id).subscribe((res: any) => {
+      console.log(res.data);
+      res.data.map((data) => {
+        console.log(data.process.name);
+        if (data.process.name == name) {
+          this.listProvedor.push({
+            data: data.provider,
+            good: data.goods_type,
+            sumi: data.number_supplies_year,
+            tonelada: data.tons_by_supplies,
+            modeTran: data.transportation_mode,
+          });
+        }
+      });
+
+      console.log(this.listProvedor);
+
+      setTimeout(() => {
+        this.load = false;
+      }, 1000);
+    });
+
+    this.Modal.show(longContent);
+    this.listProvedor = [];
+  }
+
+  cerrar() {
+    this.Modal.hide();
   }
 }

@@ -8,6 +8,14 @@
     <span> <i class="fa fa-plus"></i> Agregar</span>
   </button>
 
+  <button
+    [routerLink]="['/app', 'porcess', 'provedor_proceso']"
+    class="btn btn-facebook btn-sm mr-1"
+    style="margin-bottom: 4px"
+  >
+    <span> <i class="fa fa-archive"></i> Agregar Proveedor al Proceso</span>
+  </button>
+
   <div class="row">
     <div class="col-lg-12">
       <div class="card">
@@ -43,6 +51,13 @@
                   >
                     <i class="fa fa-briefcase"></i>
                   </button>
+                  <!-- <button
+                    data-toggle="modal"
+                    (click)="myModal.show()"
+                    class="btn btn-info mr-1 ml-1"
+                  >
+                    <i class="fa fa-briefcase"></i>
+                  </button> -->
                 </td>
               </tr>
             </tbody>
@@ -52,3 +67,30 @@
     </div>
   </div>
 </div>
+
+<ng-template #longContent let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Proveedores</h4>
+    <button type="button" class="close" aria-label="Close" (click)="cerrar()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div *ngFor="let item of listProvedor">
+      <h2>{{ item.data.name }}</h2>
+      <ul>
+        <li>Localizacion : {{ item.data.location }}</li>
+        <li>Distancia : {{ item.data.distance_km }} KM</li>
+        <li>Tipo Bienes : {{ item.good }}</li>
+        <li>Suministro al año : {{ item.sumi }}</li>
+        <li>Suministro(Toneladas) : {{ item.tonelada }}</li>
+        <li>Modo Transporte: {{ item.modeTran }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="cerrar()">
+      Close
+    </button>
+  </div>
+</ng-template>

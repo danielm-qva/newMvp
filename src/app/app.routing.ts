@@ -11,6 +11,7 @@ import { DashboardComponent } from "./views/dashboard/dashboard.component";
 import { P404Component } from "./views/error/404.component";
 import { P500Component } from "./views/error/500.component";
 import { LoginComponent } from "./views/login/login.component";
+import { ModalsComponent } from "./views/notifications/modals.component";
 import { RegisterComponent } from "./views/register/register.component";
 
 export const routes: Routes = [
@@ -28,7 +29,7 @@ export const routes: Routes = [
         component: DashboardComponent,
         canActivate: [AuthCantActiveService],
       },
-      { path: "from", component: TablesComponent },
+
       {
         path: "producto",
         loadChildren: () =>
@@ -42,6 +43,30 @@ export const routes: Routes = [
         loadChildren: () =>
           import("./Modules/m-conocimiento/m-conocimiento.module").then(
             (m) => m.MConocimientoModule
+          ),
+        canActivate: [AuthCantActiveService],
+      },
+      {
+        path: "proveedor",
+        loadChildren: () =>
+          import("./Modules/m-proveedor/m-proveedor.module").then(
+            (m) => m.MProveedorModule
+          ),
+        canActivate: [AuthCantActiveService],
+      },
+      {
+        path: "porcess",
+        loadChildren: () =>
+          import("./Modules/m-proceso/m-proceso.module").then(
+            (m) => m.MProcesoModule
+          ),
+        canActivate: [AuthCantActiveService],
+      },
+      {
+        path: "ambiental",
+        loadChildren: () =>
+          import("./Modules/m-ambiental/m-ambiental.module").then(
+            (m) => m.MAmbientalModule
           ),
         canActivate: [AuthCantActiveService],
       },

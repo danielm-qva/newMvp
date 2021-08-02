@@ -1,0 +1,177 @@
+<ngx-loading-x [show]="load"></ngx-loading-x>
+
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <form role="form" [formGroup]="FromwMaterials" (ngSubmit)="onSubmit()">
+        <div class="card">
+          <div class="card-header text-center">
+            <strong>Agregar </strong>
+            <small>Emanacion Residuales</small>
+          </div>
+
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company">Nombre</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="product_name"
+                    id="company"
+                    placeholder="Nombre"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company">Carga Ambiental</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="environmental_burden"
+                    id="company"
+                    placeholder="Carga Ambiental"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company">Norma Maxima admitida</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="maximum_admitted_standard"
+                    id="company"
+                    placeholder="Norma Maxima admitida"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company">Nivel Sobrecarga</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="overload_level"
+                    id="company"
+                    placeholder="Nivel Sobrecarga"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company">Precio</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="price"
+                    id="company"
+                    placeholder="Precio"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company"> Monto en ventas</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="sale_amount"
+                    id="company"
+                    placeholder="
+                    Monto en ventas"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company">UM</label>
+                  <input
+                    type="String"
+                    class="form-control"
+                    formControlName="um"
+                    id="company"
+                    placeholder="UM"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company">Porcentaje desperdicio</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="waste_percentage"
+                    id="company"
+                    placeholder="Porcentaje desperdicio"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company"
+                    >Porcentaje de recuperación (precio)</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="price_recoveral_percentage"
+                    id="company"
+                    placeholder="Porcentaje de recuperación (precio)"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company">Recuperacion Residuo (% Venta)</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="waste_recovery_by_sale"
+                    id="company"
+                    placeholder="Recuperacion Residuo (% Venta)"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6 col-xl-6"></div>
+              <div class="col-sm-6 col-xl-6">
+                <button
+                  type="submit"
+                  class="btn btn-primary my-4 mr-2 fadeIn fourth"
+                >
+                  Crear
+                </button>
+                <button
+                  [routerLink]="['/app', 'ambiental', 'listgeneral']"
+                  type="button"
+                  class="btn btn-primary my-4 fadeIn fourth"
+                >
+                  Cancelar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>
