@@ -1,0 +1,116 @@
+<ngx-loading-x [show]="load"></ngx-loading-x>
+
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <form role="form" [formGroup]="formsProteccion" (ngSubmit)="onSubmit()">
+        <div class="card">
+          <div class="card-header text-center">
+            <strong>Agregar </strong>
+            <small>Proceso</small>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="company">Nombre</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="name"
+                id="company"
+                placeholder="Nombre"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Recursos</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="recursos"
+                id="company"
+                placeholder="Recursos"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Cantidad</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="cantidad"
+                id="company"
+                placeholder="Cantidad"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Precio</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="precio"
+                id="company"
+                placeholder="Precio"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Vidal Util</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="vidaUtil"
+                id="company"
+                placeholder="Vida Util"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Pago Mensual</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="pagomensual"
+                id="company"
+                placeholder="Pago Mensual"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Observaciones</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="Observaciones"
+                id="company"
+                placeholder="Observaciones"
+              />
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6 col-xl-6"></div>
+              <div class="col-sm-6 col-xl-6">
+                <button
+                  [disabled]="!formsProteccion.valid"
+                  type="submit"
+                  class="btn btn-primary my-4 mr-2 fadeIn fourth"
+                >
+                  Crear
+                </button>
+                <button
+                  (click)="Atras()"
+                  type="button"
+                  class="btn btn-primary my-4 fadeIn fourth"
+                >
+                  Cancelar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>

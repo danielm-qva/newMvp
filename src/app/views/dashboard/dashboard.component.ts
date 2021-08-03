@@ -40,6 +40,8 @@ export class DashboardComponent implements OnInit {
       this.router.navigateByUrl("/app/porcess/listproceso");
     } else if (name == "ambiental") {
       this.router.navigateByUrl("/app/ambiental/listgeneral");
+    } else if (name == "infraestructura") {
+      this.router.navigateByUrl("/app/infraEstruc/listGenInfraEstruc");
     } else this.router.navigateByUrl("/404");
   }
 }

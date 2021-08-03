@@ -1,0 +1,296 @@
+<ngx-loading-x [show]="load"></ngx-loading-x>
+
+<div class="animated fadeIn">
+  <button
+    [routerLink]="['/app', 'infraEstruc', 'addUtilesH']"
+    class="btn btn-success btn-sm mr-1"
+    style="margin-bottom: 4px"
+  >
+    <span> <i class="fa fa-plus"></i> Agregar</span>
+  </button>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify">Utiles y Herramienta</i>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-striped table-responsive-sm">
+            <thead>
+              <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Importe Total</th>
+                <th scope="col">(%)Dedicacion Provceso</th>
+                <th scope="col">(%) Desgaste Anual</th>
+                <th scope="col">Costo Anual</th>
+                <th class="col-2" scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let i of listElemtos; let a = index">
+                <th scope="row">{{ a + 1 }}</th>
+                <td>{{ i.description }}</td>
+                <td>{{ i.quantity }}</td>
+                <td>{{ i.price_per_unit.amount }}</td>
+                <td>{{ i.total_amount.amount }}</td>
+                <td>{{ i.dedication_percentage }}</td>
+                <td>{{ i.annual_wear_percentage }}</td>
+                <td>{{ i.annual_cost.amount }}</td>
+                <td>
+                  <button
+                    (click)="deleteUHerramiennta(i.id)"
+                    class="btn btn-danger btn-sm mr-1 ml-1"
+                  >
+                    <i class="fa fa-trash"></i>
+                  </button>
+                  <button
+                    disabled
+                    (click)="UpdateInvacion(i.id)"
+                    class="btn btn-info btn-sm mr-1 ml-1"
+                    [routerLink]="['/infraes/updateUtiles', i.id]"
+                  >
+                    <i class="fa fa-history"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button
+    [routerLink]="['/app', 'infraEstruc', 'addProteccion']"
+    class="btn btn-success btn-sm mr-1"
+    style="margin-bottom: 4px"
+  >
+    <span> <i class="fa fa-plus"></i> Agregar</span>
+  </button>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify">Proteccion</i>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-striped table-responsive-sm">
+            <thead>
+              <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Medida</th>
+                <th scope="col">Recursos Necesario</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Vida Util</th>
+                <th scope="col">Pago Mensual</th>
+                <th scope="col">Importe Anual</th>
+                <th scope="col">Observaciones</th>
+                <th class="col-2" scope="col-3">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let i of listProtecc; let a = index">
+                <th scope="row">{{ a + 1 }}</th>
+                <td>{{ i.name }}</td>
+                <td>{{ i.resource }}</td>
+                <td>{{ i.quantity }}</td>
+                <td>{{ i.price_per_unit.amount }}</td>
+                <td>{{ i.useful_life_months }}</td>
+                <td>{{ i.monthly_payment.amount }}</td>
+                <td>{{ i.annual_cost.amount }}</td>
+                <td>{{ i.observations }}</td>
+                <td>
+                  <button
+                    (click)="deleteProteccion(i.id)"
+                    class="btn btn-danger btn-sm mr-1 ml-1"
+                  >
+                    <i class="fa fa-trash"></i>
+                  </button>
+                  <button
+                    disabled
+                    (click)="UpdateInvacion(i.id)"
+                    class="btn btn-info btn-sm mr-1 ml-1"
+                    [routerLink]="['/infraes/updateProteccion', i.id]"
+                  >
+                    <i class="fa fa-history"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button
+    [routerLink]="['/app', 'infraEstruc', 'addMetrologia']"
+    class="btn btn-success btn-sm mr-1"
+    style="margin-bottom: 4px"
+  >
+    <span> <i class="fa fa-plus"></i> Agregar</span>
+  </button>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify">Metrologia</i>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-striped table-responsive-sm">
+            <thead>
+              <tr>
+                <th scope="col">Punto Control</th>
+                <th scope="col">Variable Controlada</th>
+                <th scope="col">Instrumento</th>
+                <th scope="col">Importe</th>
+                <th scope="col">Importe de Verificacion</th>
+                <th scope="col">Gasto Total</th>
+                <th class="col-3" scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let i of listmtrologia">
+                <td>{{ i.name }}</td>
+                <td>{{ i.variable_to_control }}</td>
+                <td>{{ i.instrument }}</td>
+                <td>{{ i.total_amount.amount }}</td>
+                <td>{{ i.annual_cost_verification.amount }}</td>
+                <td>{{ i.annual_total_expense.amount }}</td>
+                <td>
+                  <button
+                    (click)="deleteMetrologia(i.id)"
+                    class="btn btn-danger btn-sm mr-1 ml-1"
+                  >
+                    <i class="fa fa-trash"></i>
+                  </button>
+                  <button
+                    class="btn btn-info btn-sm mr-1 ml-1"
+                    disabled
+                    [routerLink]="['/infraes/updateMetrologia', i.id]"
+                  >
+                    <i class="fa fa-history"></i>
+                  </button>
+                  <button
+                    (click)="detalles_Metrologia(i.id, longContent)"
+                    class="btn btn-warning btn-sm mr-1 ml-1"
+                  >
+                    <i class="fa fa-archive"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button
+    [routerLink]="['/app', 'infraEstruc', 'addActivoFT']"
+    class="btn btn-success btn-sm mr-1"
+    style="margin-bottom: 4px"
+  >
+    <span> <i class="fa fa-plus"></i> Agregar</span>
+  </button>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify">Activo Fijo Tangible</i>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-striped table-responsive-sm">
+            <thead>
+              <tr>
+                <th scope="col">No. Inventario</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">% Dedicacion Proceso</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio Adquisicion</th>
+                <th scope="col">Valor Total</th>
+                <th class="col-2">Tasa Depreciacion(%)</th>
+                <th scope="col">Clasificacion Impuestos</th>
+                <th class="col-2" scope="col-3">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let i of listActivoFijo">
+                <th scope="row">{{ i.inventory_number }}</th>
+                <td>{{ i.description }}</td>
+                <td>{{ i.dedicated_percentage }}</td>
+                <td>{{ i.quantity }}</td>
+                <td>{{ i.purchase_price.amount }}</td>
+                <td>{{ i.total_value.amount }}</td>
+                <td>{{ i.depreciation_rate }}</td>
+                <td>{{ i.classification }}</td>
+                <td>
+                  <button
+                    (click)="deleteAFtangible(i.id)"
+                    class="btn btn-danger btn-sm mr-1 ml-1"
+                  >
+                    <i class="fa fa-trash"></i>
+                  </button>
+                  <button
+                    disabled
+                    (click)="UpdateInvacion(i.id)"
+                    class="btn btn-info btn-sm mr-1 ml-1"
+                    [routerLink]="['/infraes/udateAFtangible', i.id]"
+                  >
+                    <i class="fa fa-history"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #longContent let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Detalles</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="cerraModal()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div *ngFor="let item of detalles">
+      <h2>Nombre :{{ item.name }}</h2>
+      <ul>
+        <li>Variable Control : {{ item.variable_to_control }}</li>
+        <li>Instrumento : {{ item.instrument }}</li>
+        <li>Precision : {{ item.precision }}</li>
+        <li>Cantidad : {{ item.quantity }}</li>
+        <li>Empleo en Proceso : {{ item.dedicated_percentage }}</li>
+        <li>Precio : {{ item.price_per_unit.amount }}</li>
+        <li>Vida Util : {{ item.useful_life_years }}</li>
+        <li>
+          Frecuencia Verificacion : {{ item.verification_frequency_months }}
+        </li>
+        <li>Precio Verificacion : {{ item.price_per_verification.amount }}</li>
+        <li>Ejecuto Verificacion : {{ item.executor }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="cerraModal()">
+      Close
+    </button>
+  </div>
+</ng-template>

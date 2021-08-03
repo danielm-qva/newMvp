@@ -1,0 +1,115 @@
+<ngx-loading-x [show]="load"></ngx-loading-x>
+
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <form role="form" [formGroup]="FromAFT" (ngSubmit)="onSubmit()">
+        <div class="card">
+          <div class="card-header text-center">
+            <strong>Agregar </strong>
+            <small>Proceso</small>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="company">Clasificacion</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="clasificacion"
+                id="company"
+                placeholder="Clasificacion"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">(%) Dedicado</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="porcentageDedicado"
+                id="company"
+                placeholder="(%)Dedicado"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Descripcion</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="description"
+                id="company"
+                placeholder="Descripcion"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Despreciacion</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="despreciation"
+                id="company"
+                placeholder="Despreciacion"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company"># Inventario</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="numeroInventario"
+                id="company"
+                placeholder="# Inventario"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Precio</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="precio"
+                id="company"
+                placeholder="Precio"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Cantidad</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="cantidad"
+                id="company"
+                placeholder="Cantidad"
+              />
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6 col-xl-6"></div>
+              <div class="col-sm-6 col-xl-6">
+                <button
+                  type="submit"
+                  class="btn btn-primary my-4 mr-2 fadeIn fourth"
+                >
+                  Crear
+                </button>
+                <button
+                  (click)="Atras()"
+                  type="button"
+                  class="btn btn-primary my-4 fadeIn fourth"
+                >
+                  Cancelar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>

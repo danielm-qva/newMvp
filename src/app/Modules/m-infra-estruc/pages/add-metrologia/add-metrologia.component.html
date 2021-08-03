@@ -1,0 +1,191 @@
+<ngx-loading-x [show]="load"></ngx-loading-x>
+
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <form role="form" [formGroup]="formetrologia" (ngSubmit)="onSubmit()">
+        <div class="card">
+          <div class="card-header text-center">
+            <strong>Agregar </strong>
+            <small>Emanacion Residuales</small>
+          </div>
+
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company">Punto Control</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="puntoControl"
+                    id="company"
+                    placeholder="Punto Control"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company">Varible controlada</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="Vcontrolada"
+                    id="company"
+                    placeholder="Variable controlada"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company">Instrumento</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="instrumento"
+                    id="company"
+                    placeholder="Instrumento"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company">Precision</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="precision"
+                    id="company"
+                    placeholder="Precision"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company">Cantidad</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="cantidad"
+                    id="company"
+                    placeholder="Cantidad"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company">Proceso </label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="Eproceso"
+                    id="company"
+                    placeholder="Proceso"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company">Precio</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="precio"
+                    id="company"
+                    placeholder="Precio"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company">Vida Util</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="VidaUtil"
+                    id="company"
+                    placeholder="Vida Util"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company">Frecuencia</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="Frecuencia"
+                    id="company"
+                    placeholder="Frecuencia"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company">Precion Verificacion</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="PrecionVerificacion"
+                    id="company"
+                    placeholder="Precion Verificacion"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="company">Ejecutor</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="Ejecutor"
+                    id="company"
+                    placeholder="Ejecutor"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-3"></div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6 col-xl-6"></div>
+              <div class="col-sm-6 col-xl-6">
+                <button
+                  type="submit"
+                  class="btn btn-primary my-4 mr-2 fadeIn fourth"
+                >
+                  Crear
+                </button>
+                <button
+                  (click)="Atras()"
+                  type="button"
+                  class="btn btn-primary my-4 fadeIn fourth"
+                >
+                  Cancelar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>

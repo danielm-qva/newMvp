@@ -1,0 +1,94 @@
+<ngx-loading-x [show]="load"></ngx-loading-x>
+
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <form role="form" [formGroup]="fromsUTools" (ngSubmit)="onSubmit()">
+        <div class="card">
+          <div class="card-header text-center">
+            <strong>Agregar </strong>
+            <small>Proceso</small>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="company">Descripcion</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="descripcion"
+                id="company"
+                placeholder="Descripcion"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Cantidad</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="cantidad"
+                id="company"
+                placeholder="Cantidad"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Precio</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="precio"
+                id="company"
+                placeholder="Precio"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Porcentage Anual</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="porcentageAnual"
+                id="company"
+                placeholder="Porcentage Anual"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Desgaste Anual(%) </label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="porcetagewear"
+                id="company"
+                placeholder="Porcentage Anual"
+              />
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6 col-xl-6"></div>
+              <div class="col-sm-6 col-xl-6">
+                <button
+                  [disabled]="!fromsUTools.valid"
+                  type="submit"
+                  class="btn btn-primary my-4 mr-2 fadeIn fourth"
+                >
+                  Crear
+                </button>
+                <button
+                  (click)="Atra()"
+                  type="button"
+                  class="btn btn-primary my-4 fadeIn fourth"
+                >
+                  Cancelar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>

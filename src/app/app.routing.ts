@@ -70,6 +70,13 @@ export const routes: Routes = [
           ),
         canActivate: [AuthCantActiveService],
       },
+      {
+        path: "infraEstruc",
+        loadChildren: () =>
+          import("./Modules/m-infra-estruc/m-infra-estruc.module").then(
+            (m) => m.MInfraEstrucModule
+          ),
+      },
     ],
   },
   {
