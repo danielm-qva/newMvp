@@ -29,6 +29,7 @@ export const routes: Routes = [
         component: DashboardComponent,
         canActivate: [AuthCantActiveService],
       },
+      { path: "from", component: FormsComponent },
 
       {
         path: "producto",
@@ -84,13 +85,6 @@ export const routes: Routes = [
     component: P404Component,
     data: {
       title: "Page 404",
-    },
-  },
-  {
-    path: "500",
-    component: P500Component,
-    data: {
-      title: "Page 500",
     },
   },
   {

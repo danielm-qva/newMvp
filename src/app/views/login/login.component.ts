@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthServiceService } from "../../Services/auth-service.service";
-import { FormGroup, FormControl, Validator } from "@angular/forms";
+import { FormGroup, FormControl, Validator, Validators } from "@angular/forms";
 import { ToastrService } from "ngx-toastr";
 
 @Component({
@@ -19,7 +19,9 @@ export class LoginComponent implements OnInit {
     public Toast: ToastrService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.Flogin.valid);
+  }
 
   onSubmit() {
     this.load = true;
