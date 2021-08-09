@@ -5,45 +5,96 @@
         <div class="col-md-6 mx-auto">
           <div class="card mx-4">
             <div class="card-body p-4">
-              <form>
-                <h1>Register</h1>
-                <p class="text-muted">Create your account</p>
+              <form
+                role="form"
+                (ngSubmit)="onSubmit()"
+                class="was-validated"
+                [formGroup]="fromRegis"
+              >
+                <h1>Registro</h1>
+                <p class="text-muted">Crea tu cuenta</p>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="icon-user"></i></span>
+                    <span class="input-group-text"
+                      ><i class="icon-user"></i
+                    ></span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Username" autocomplete="username" required>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Username"
+                    autocomplete="username"
+                    required
+                  />
+                  <div class="valid-feedback">Campo Valido.</div>
+                  <div class="invalid-feedback">Nombre Usuario</div>
                 </div>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
-                    <span class="input-group-text">@</span>
+                    <span class="input-group-text"
+                      ><i class="icon-user"></i
+                    ></span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Email" autocomplete="email" required>
+                  <input
+                    type="email"
+                    class="form-control"
+                    formControlName="email"
+                    placeholder="Correo electronico"
+                    autocomplete="username"
+                    required
+                  />
+
+                  <div class="valid-feedback">Campo Valido.</div>
+                  <div class="invalid-feedback">
+                    Este campo es Obligatorio y tiene un formato
+                    (xxx@dominio.xxx)
+                  </div>
                 </div>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="icon-lock"></i></span>
+                    <span class="input-group-text"
+                      ><i class="icon-lock"></i
+                    ></span>
                   </div>
-                  <input type="password" class="form-control" placeholder="Password" autocomplete="new-password" required>
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Password"
+                    formControlName="pass"
+                    autocomplete="new-password"
+                    required
+                  />
                 </div>
                 <div class="input-group mb-4">
                   <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="icon-lock"></i></span>
+                    <span class="input-group-text"
+                      ><i class="icon-lock"></i
+                    ></span>
                   </div>
-                  <input type="password" class="form-control" placeholder="Repeat password" autocomplete="new-password" required>
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Pepetir password"
+                    autocomplete="new-password"
+                    required
+                    formControlName="pass2"
+                  />
                 </div>
-                <button type="button" class="btn btn-block btn-success">Create Account</button>
+                <button
+                  type="submit"
+                  [disabled]="confirmarPass()"
+                  class="btn btn-block btn-success"
+                >
+                  Crear Cuenta
+                </button>
+                <button
+                  type="button"
+                  (click)="atras()"
+                  class="btn btn-block btn-danger"
+                >
+                  Salir
+                </button>
               </form>
-            </div>
-            <div class="card-footer p-4">
-              <div class="row">
-                <div class="col-6">
-                  <button class="btn btn-block btn-facebook" type="button"><span>facebook</span></button>
-                </div>
-                <div class="col-6">
-                  <button class="btn btn-block btn-twitter" type="button"><span>twitter</span></button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -51,3 +102,4 @@
     </div>
   </main>
 </div>
+<ngx-loading-x [show]="load"></ngx-loading-x>
