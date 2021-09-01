@@ -9,6 +9,7 @@ interface A {
   templateUrl: "dashboard.component.html",
 })
 export class DashboardComponent implements OnInit {
+  dateFecha: any;
   elemet: A[] = [
     {
       color: "#055255",
@@ -24,7 +25,9 @@ export class DashboardComponent implements OnInit {
     },
   ];
   constructor(public router: Router) {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.dateFecha = new Date();
+  }
 
   hola(event) {
     const name = event.target.name;
