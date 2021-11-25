@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  URL: "https://localhost:4000/api/",
+  URL: "https://mvp-api-jc.herokuapp.com/api/",
 };
